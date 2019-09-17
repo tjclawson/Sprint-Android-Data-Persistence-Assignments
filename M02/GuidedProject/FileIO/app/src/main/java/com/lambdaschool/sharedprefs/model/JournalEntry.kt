@@ -30,20 +30,52 @@ class JournalEntry : Serializable {
     }
 
     // TODO 11: Write constructor from JSONObject
+    constructor(jsonObject: JSONObject) {
+        try {
+            this.date = jsonObject.getString("date")
+        } catch (e: JSONException) {
+            this.date = (Date().time /1000).toString()
+        }
+        try {
+            this.entryText = jsonObject.getString("entry_text")
+        } catch (e: JSONException) {
+            this.entryText = ""
+        }
+        try {
+            this.image = jsonObject.getString("image")
+        } catch (e: JSONException) {
+            this.image = ""
+        }
+        try {
+            this.date = jsonObject.getString("date")
+        } catch (e: JSONException) {
+            this.date = (Date().time /1000).toString()
+        }
+        this.date = jsonObject.getString("date")
+        this.entryText = jsonObject.getString("entry_text")
+        this.image = jsonObject.getString("image")
+        this.dayRating = jsonObject.getInt("day_rating")
+        this.id = jsonObject.getInt("id")
+    }
 
     // TODO 7: Implement toJSONObject method
-    fun toJsonObject(): JSONObject {
+    fun toJsonObject(): JSONObject? {
         try {
             return JSONObject().apply {
                 put("date", date)
                 put("entry_text", entryText)
                 put("image", image)
                 put("day_rating", dayRating)
+                put("id", id)
             }
         } catch (e: JSONException) {
-            return
+            return try {
+                JSONObject("{\"date\" : \"$date\", \"entry_text\" : \"$entryText\", \"image\" : \"$image\", \"day_rating\": $dayRating, \"id\": $id}")
+            } catch (e2: JSONException) {
+                e2.printStackTrace()
+                return null
+            }
         }
-
     }
 
     constructor(csvString: String) {
@@ -88,7 +120,7 @@ class JournalEntry : Serializable {
         val dateFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.US)
         val date = Date()
 
-        this.date = dateFormat.format(date)
+        this.date = (date.time / 1000).toString()
     }
 
     fun getImage(): Uri? {

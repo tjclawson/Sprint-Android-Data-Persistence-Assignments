@@ -21,8 +21,11 @@ class EditBookActivity : AppCompatActivity() {
 
         val newBookCsv = intent.getStringExtra(EDIT_INTENT_KEY)
 
+
         if (newBookCsv != null) {
+            Log.i("Debug", "newbookcsv: " + newBookCsv)
             editBook = Book(newBookCsv)
+            Log.i("Debug", "editbook id: " + editBook.id.toString())
             et_title.setText(editBook.title)
             et_reason.setText(editBook.reasonToRead)
             if (editBook.hasBeenRead == false) {
@@ -31,7 +34,7 @@ class EditBookActivity : AppCompatActivity() {
                 button_read.isChecked = true
             }
         } else {
-            editBook = Book("","", false, intent.getStringExtra(ADD_INTENT_KEY) )
+            editBook = Book("","", false, intent.getIntExtra(ADD_INTENT_KEY, 5000) )
         }
 
         button_read.setOnClickListener{
@@ -45,6 +48,7 @@ class EditBookActivity : AppCompatActivity() {
         }
 
         button_submit.setOnClickListener {
+            Log.i("Debug", "editbook id when submitted: " + editBook.id.toString())
             returnData()
         }
 

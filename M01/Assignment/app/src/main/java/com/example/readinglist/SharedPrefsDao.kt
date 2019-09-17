@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 class SharedPrefsDao(context: Context) {
 
-    companion object{
+   /* companion object{
         const val LIST_ID = "LISTID"
         const val NEXT_ID = "NEXTID"
         const val PREF_KEY = "PREFERENCES"
@@ -91,5 +91,5 @@ class SharedPrefsDao(context: Context) {
             }
         }
         return bookList
-    }
+    }*/
 }
