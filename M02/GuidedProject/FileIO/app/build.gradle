@@ -31,7 +31,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.0.0'
 
-    // TODO: 1. Add Timber for additional logging features: class, method, line numbers for each log statement
     implementation "com.jakewharton.timber:timber:4.7.1"
 
     testImplementation 'junit:junit:4.12'

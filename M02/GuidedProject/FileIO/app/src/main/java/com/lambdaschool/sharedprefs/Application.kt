@@ -3,12 +3,11 @@ package com.lambdaschool.sharedprefs
 import android.app.Application
 import timber.log.Timber
 
-// TODO: 5. Lazy initialization of a prefs object for Activities to use...
-val prefs: Prefs by lazy {
-    App.prefs!!
+// TODO 4: Change to the repo interface here
+val repo: JournalRepoInterface by lazy {
+    App.repo!!
 }
 
-// TODO: 3. Extend Timber to include class, method, line numbers!
 class MyDebugTree : Timber.DebugTree() {
     override fun createStackElementTag(element: StackTraceElement): String? {
         return String.format(
@@ -22,17 +21,17 @@ class MyDebugTree : Timber.DebugTree() {
 
 class App : Application() {
 
-    // TODO: 4. Provide an Application-wide Shared Preferences
     companion object {
-        var prefs: Prefs? = null
+        var repo: JournalRepoInterface? = null
     }
 
     override fun onCreate() {
         super.onCreate()
 
-        prefs = Prefs(applicationContext)
+        // TODO 5: Instantiate the File repo here instead of Prefs
+        //repo = Prefs(applicationContext)
+        repo = JournalFileRepo(applicationContext)
 
-        // TODO: 2. Configure Timber logging
         // "Timber" Library
         if (BuildConfig.DEBUG) {
             Timber.plant(MyDebugTree())

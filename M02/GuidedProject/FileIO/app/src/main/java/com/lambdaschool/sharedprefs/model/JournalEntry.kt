@@ -1,12 +1,13 @@
 package com.lambdaschool.sharedprefs.model
 
 import android.net.Uri
+import org.json.JSONException
+import org.json.JSONObject
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-// TODO: 22. The Model Class for a Journal Entry
 class JournalEntry : Serializable {
 
     companion object {
@@ -26,6 +27,23 @@ class JournalEntry : Serializable {
         this.image = ""
 
         initializeDate()
+    }
+
+    // TODO 11: Write constructor from JSONObject
+
+    // TODO 7: Implement toJSONObject method
+    fun toJsonObject(): JSONObject {
+        try {
+            return JSONObject().apply {
+                put("date", date)
+                put("entry_text", entryText)
+                put("image", image)
+                put("day_rating", dayRating)
+            }
+        } catch (e: JSONException) {
+            return
+        }
+
     }
 
     constructor(csvString: String) {
@@ -54,7 +72,6 @@ class JournalEntry : Serializable {
         }
     }
 
-    // TODO: 23. One approach to save an object into a String
     // converting our object into a csv string that we can handle in a constructor
     internal fun toCsvString(): String {
         return String.format(

@@ -8,7 +8,6 @@ import com.lambdaschool.sharedprefs.model.JournalEntry
  */
 class Journal {
 
-    // TODO: 24. Business-Logic can be placed in an Entity class such as this; helps with Unit Testing too.
     companion object {
 
         fun createJournalEntry(): JournalEntry {
