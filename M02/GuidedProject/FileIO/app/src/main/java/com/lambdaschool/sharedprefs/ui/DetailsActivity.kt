@@ -14,7 +14,6 @@ import com.lambdaschool.sharedprefs.model.JournalEntry
 import kotlinx.android.synthetic.main.activity_detail.*
 import timber.log.Timber.i
 
-// TODO: 25. Activity to show Details of a Journal Entry - whether for a brand new entry, for to edit an existing entry
 class DetailsActivity : AppCompatActivity() {
 
     companion object {
@@ -31,7 +30,6 @@ class DetailsActivity : AppCompatActivity() {
         i("onCreate")
 
         val intent = intent
-        // TODO: 26. Get the JournalEntry as passed in to this activity
         entry = intent.getSerializableExtra(JournalEntry.TAG) as JournalEntry
 
         entry_id_label.text = "#${entry.id}"
@@ -74,7 +72,6 @@ class DetailsActivity : AppCompatActivity() {
         }
 
         add_image_button.setOnClickListener {
-            // TODO: 27: Ask for an Image from the device (Intent)
             val imageIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             imageIntent.apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
@@ -94,7 +91,6 @@ class DetailsActivity : AppCompatActivity() {
 
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_REQUEST_CODE && data != null) {
             data.data?.let {
-                // TODO: 28: If an image was selected, set it in the Journal Entry
                 entry.setImage(it)
                 journal_entry_image.setImageURI(it)
             }
@@ -139,7 +135,6 @@ class DetailsActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            // TODO: 29. "SAVE" Menu Item to save/update a Journal Entry
             R.id.action_save -> {
                 val resultIntent = Intent()
                 resultIntent.putExtra(JournalEntry.TAG, entry)
