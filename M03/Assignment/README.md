@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project will have you use db-fiddle to create a small SQL database and interact with it. To turn this assignment in, I'd like you to do 2 things. First, fork this repo and add two text files to it using the "create new file" button. One file will be the code in the left panel of db-fiddle, the other will be the code on the right. The second thing would be to send the URL to the latest version of your db-fiddle to your PM in a DM on slack so they can review it.
+This project will have you use db-fiddle to create a small SQL database and interact with it. To turn this assignment in, I'd like you to do 2 things. First, fork this repo and add two text files to it using the "create new file" button. One file will be the code in the left panel of db-fiddle, the other will be the code on the right. The second thing would be to send the URL to the latest version of your db-fiddle to your TL in a DM on Slack so they can review it.
 
 ## Instructions
 
@@ -11,7 +11,7 @@ This project will have you use db-fiddle to create a small SQL database and inte
 Navigate to db-filddle, create a new sqlite instance
 
 1. Navigate to [https://www.db-fiddle.com/]
-2. In the dropdown on the top left, select sqlite v3.18
+2. In the dropdown on the top left, select SQLite v3.26
 
 ### Part 2 - Schema
 
