@@ -1,0 +1,75 @@
+CREATE TABLE players (
+  player_id INTEGER PRIMARY KEY,
+  first_name TEXT,
+  last_name TEXT,
+  age INTEGER,
+  team_id INTEGER,
+  FOREIGN KEY(team_id) REFERENCES teams(team_id)
+  );
+
+CREATE TABLE teams (
+  team_id INTEGER PRIMARY KEY,
+  name TEXT,
+  location TEXT,
+  coach TEXT
+  );
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (1, "Tom", "Brady", 42, 1);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (2, "Julian", "Edelman", 33, 1);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (3, "Patrick", "Mahomes", 24, 5);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (4, "Eli", "Manning", 38, 3);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (5, "Philip", "Rivers", 37, 4);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (6, "Devin", "McCourty", 32, 1);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (7, "Jason", "McCourty", 32, 1);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (8, "Drew", "Brees", 40, 6);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (9, "Aaron", "Rodgers", 35, 7);
+
+INSERT INTO players (player_id, first_name, last_name, age, team_id)
+VALUES (10, "Russell", "Wilson", 30, 2);
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (1, "New England Patriots", "MA", "Bill Belichick");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (2, "Seattle Seahawks", "WA", "Pete Carroll");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (3, "New York Giants", "NY", "Pat Shurmur");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (4, "Los Angeles Chargers", "CA", "Anthony Lynn");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (5, "Kansas City Chiefs", "MO", "Andy Reid");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (6, "New Orleans Saints", "LA", "Sean Payton");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (7, "Green Bay Packers", "WI", "Matt LaFleur");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (8, "Buffalo Bills", "NY", "Sean McDermott");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (9, "Miami Dolphins", "FL", "Brian Flores");
+
+INSERT INTO teams (team_id, name, location, coach)
+VALUES (10, "Los Angeles Rams", "CA", "Sean McVay");
