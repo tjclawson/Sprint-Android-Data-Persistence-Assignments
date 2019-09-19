@@ -1,7 +1,6 @@
 package com.lambdaschool.sharedprefs
 
 import android.app.Application
-import com.lambdaschool.sharedprefs.database.JournalDBRepo
 import timber.log.Timber
 
 // TODO 3: Notice that we are still using the interface we created
