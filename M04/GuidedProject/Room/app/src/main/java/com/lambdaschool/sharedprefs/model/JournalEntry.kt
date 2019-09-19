@@ -13,12 +13,13 @@ import java.util.Locale
 
 // TODO 6: Annotate the Entity
 
+@Entity
 class JournalEntry : Serializable {
 
     companion object {
         const val TAG = "JournalEntry"
         // TODO 8: This must be 0 if we want autoGenerate to work
-        const val INVALID_ID = -1
+        const val INVALID_ID = 0
     }
 
     var date: String? = null
@@ -27,6 +28,7 @@ class JournalEntry : Serializable {
     var dayRating: Int = 0
 
     // TODO 7: Let's make id the primary key
+    @PrimaryKey(autoGenerate = true) @NonNull
     var id: Int = 0
 
     constructor(id: Int) {

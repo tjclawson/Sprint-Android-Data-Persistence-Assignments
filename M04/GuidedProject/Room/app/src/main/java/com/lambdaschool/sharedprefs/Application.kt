@@ -1,6 +1,7 @@
 package com.lambdaschool.sharedprefs
 
 import android.app.Application
+import com.lambdaschool.sharedprefs.database.JournalDBRepo
 import timber.log.Timber
 
 // TODO 3: Notice that we are still using the interface we created
@@ -29,9 +30,10 @@ class App : Application() {
         super.onCreate()
 
         //repo = Prefs(applicationContext)
-        repo = JournalFileRepo(applicationContext)
+        //repo = JournalFileRepo(applicationContext)
 
         // TODO 18: Instantiate the DB repo here instead
+        repo = JournalDBRepo(applicationContext)
 
         // "Timber" Library
         if (BuildConfig.DEBUG) {
