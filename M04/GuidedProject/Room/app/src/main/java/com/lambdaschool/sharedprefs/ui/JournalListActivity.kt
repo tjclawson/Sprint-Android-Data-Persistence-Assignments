@@ -20,7 +20,7 @@ class JournalListActivity : AppCompatActivity() {
     }
 
     // TODO 27a: We don't need entryList anymore, but we do need a viewModel
-    var entryList: List<JournalEntry> = ArrayList()
+    var entryList: MutableList<JournalEntry> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -121,8 +121,7 @@ class JournalListActivity : AppCompatActivity() {
             } else if (requestCode == EDIT_ENTRY_REQUEST) {
                 if (data != null) {
                     val entry = data.getSerializableExtra(JournalEntry.TAG) as JournalEntry
-                    val index = entry.id
-                    entryList.get(index) = entry
+                    entryList[entry.id] = entry
                     repo.updateEntry(entry) // TODO 16b. Notice the call here, replace with AsyncTask
                 }
             }
