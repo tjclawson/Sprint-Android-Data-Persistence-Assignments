@@ -30,10 +30,9 @@ class App : Application() {
         super.onCreate()
 
         //repo = Prefs(applicationContext)
-        //repo = JournalFileRepo(applicationContext)
+        repo = JournalFileRepo(applicationContext)
 
         // TODO 18: Instantiate the DB repo here instead
-        repo = JournalDBRepo(applicationContext)
 
         // "Timber" Library
         if (BuildConfig.DEBUG) {
