@@ -1,0 +1,17 @@
+SELECT * FROM players;
+
+SELECT last_name FROM players;
+
+SELECT first_name, last_name FROM players WHERE age BETWEEN 20 AND 30;
+
+UPDATE players SET last_name="Brady the GOAT" WHERE last_name LIKE "%Brady%";
+SELECT * FROM players WHERE last_name LIKE "%Brady%";
+
+UPDATE teams SET name="A Pathetic Excuse for a football team AKA The Miami Dolphins" WHERE name LIKE "%Miami Dolphins%";
+SELECT * FROM teams WHERE name LIKE "%Miami Dolphins%";
+
+DELETE FROM players WHERE first_name="Aaron";
+SELECT * FROM players;
+
+SELECT * FROM players 
+JOIN teams ON players.team_id = teams.team_id;
